@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Course Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body class="p-3 p-md-4">
+    <div class="container-fluid px-0 px-lg-2">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-xl-2">
+                <div class="sidebar">
+                    <div class="logo-area mb-4 d-flex align-items-center gap-2">
+                        <i class="bi bi-cpu fs-3"></i>
+                        <h4 class="mb-0">CourseHub</h4>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle p-2">
+                                <i class="bi bi-person-circle fs-3 text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 fw-semibold">Dana Dghaym</p>
+                                <small class="text-muted">Computer Science</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav>
+                        <a href="#" class="nav-item-custom active">
+                            <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
+                        </a>
+                        <a href="SidebarServlet?page=CoursesMain" class="nav-item-custom">
+                            <i class="bi bi-journal-bookmark-fill"></i> <span>My classes</span>
+                        </a>
+                        <a href="ScheduleServlet" class="nav-item-custom">
+                            <i class="bi bi-clock"></i> <span>Schedule</span>
+                        </a>
+                        <a href="SidebarServlet?page=flowchart" class="nav-item-custom">
+                            <i class="bi bi-diagram-2"></i> <span>FlowChart</span>
+                        </a>
+                        <a href="SidebarServlet?page=messages" class="nav-item-custom">
+                            <i class="bi bi-chat-dots"></i> <span>Messages</span>
+                        </a>
+                        <a href="LogoutServlet" class="nav-item-custom">
+                            <span>Sign Out</span>
+                        </a>
+                    </nav>
+
+                    <hr class="my-4">
+
+                    <div class="theme-section mb-3">
+                        <label for="themeSelector" class="theme-label">Theme</label>
+                        <select id="themeSelector" class="form-select form-select-sm theme-select">
+                            <option value="default">Default</option>
+                            <option value="midnight">Midnight</option>
+                            <option value="forest">Forest</option>
+                            <option value="bubblegum">Bubblegum</option>
+                            <option value="funky">Funky</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="col-lg-9 col-xl-10">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1 class="display-6 fw-bold">HELLO, Dana! 👋</h1>
+                        <p class="text-muted">A lot of upcoming events! All the best!</p>
+                    </div>
+                    <div class="mt-2 mt-sm-0">
+                        <span class="badge-attend"><i class="bi bi-people-fill me-1"></i> Spring 2026</span>
+                    </div>
+                </div>
+
+                <!-- Carousel -->
+                <div class="card-modern mb-4 overflow-hidden">
+                    <div class="card-header-custom">
+                        <span><i class="bi bi-images me-2"></i>Campus highlights</span>
+                    </div>
+                    <div class="p-3 pt-0">
+                        <div id="uniCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#uniCarousel" data-bs-slide-to="0" class="active"
+                                    aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#uniCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#uniCarousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="library.jpg" class="d-block w-100" alt="University library">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+                                        <h5>Library</h5>
+                                        <p>opening hours: </p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                   <img src="esbb.png" class="d-block w-100" alt="Campus labs">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+                                        <h5>ESB Labs</h5>
+                                        <p>Labs closed until further notice</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="mainauditorium.jpeg" class="d-block w-100" alt="Main auditorium">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+                                        <h5>Main Auditorium</h5>
+                                        <p>Hackathon event: 4th May 2026</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#uniCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#uniCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main dashboard cards -->
+                <div class="row g-4 mb-4 align-items-start">
+                    <!-- Left -->
+                    <div class="col-lg-5">
+                        <div class="card-modern">
+                            <div class="card-header-custom">
+                                <span><i class="bi bi-calendar-event-fill me-2 text-danger"></i>Upcoming exams &
+                                    projects</span>
+                                <i class="bi bi-alarm text-muted"></i>
+                            </div>
+                            <div class="p-4 pt-0 upcoming-tasks-body">
+                                {{UPCOMING_TASKS}}
+                                <a href="SidebarServlet?page=CoursesMain"
+                                    class="btn btn-sm btn-outline-primary mt-3 w-100 rounded-pill">
+                                    View courses <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right -->
+                    <div class="col-lg-7">
+                        <div class="row g-4">
+                            <!-- To-Do -->
+                            <div class="col-md-6">
+                                <div class="card-modern">
+                                    <div class="card-header-custom">
+                                        <span><i class="bi bi-check2-square me-2 text-success"></i>My To-Do List</span>
+                                        <button id="addTodoBtn" class="circle-btn">
+                                            <i class="bi bi-plus-lg"></i>
+                                        </button>
+                                    </div>
+                                    <div class="p-4 pt-0" id="todoListContainer">
+                                        <!-- tasks will be loaded here from servlet -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Calendar -->
+                            <div class="col-md-6">
+                                <div class="card-modern">
+                                    <div class="card-header-custom">
+                                        <span><i class="bi bi-calendar3 me-2"></i>May 2026</span>
+                                        <i class="bi bi-three-dots"></i>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="calendar-mini">
+                                            <div class="calendar-header">
+                                                <button id="prevMonthBtn"
+                                                    class="btn btn-sm btn-outline-secondary rounded-circle">
+                                                    <i class="bi bi-chevron-left"></i>
+                                                </button>
+                                                <span id="monthYearDisplay" class="fw-semibold">May 2026</span>
+                                                <button id="nextMonthBtn"
+                                                    class="btn btn-sm btn-outline-secondary rounded-circle">
+                                                    <i class="bi bi-chevron-right"></i>
+                                                </button>
+                                            </div>
+                                            <div class="calendar-grid" id="calendarGrid">
+                                                <!-- weekdays + days generated by js -->
+                                            </div>
+                                            <div class="mt-2 text-center small text-muted">📌 Exams: 15, 22 May</div>
+                                        </div>
+                                        <div class="mt-4 pt-2 border-top">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span><i class="bi bi-person-check-fill text-primary"></i>
+                                                    Attendance</span>
+                                                <span class="stat-number">60%</span>
+                                            </div>
+                                            <div class="progress progress-custom mb-3">
+                                                <div class="progress-bar bg-primary" style="width:60%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-4 pt-3 text-muted">© 2026 CourseHub</footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="homepage.js"></script>
+</body>
+
+</html>

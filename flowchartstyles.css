@@ -1,0 +1,276 @@
+/* default variables set up */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+
+    --available-bg: #ffffff;
+    --available-text: black;
+    --available-border: #000000;
+
+    --locked-bg: #e0e0e0;
+    --locked-text: #565d63;
+    --locked-border: #000000;
+
+    --progress-bg: #ab3f48;
+    --progress-text: #000;
+    --progress-border: #000000;
+
+    --completed-bg: #750009;
+    --completed-text: #fff;
+    --completed-border: #000000;
+}
+
+/* general page set up */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+
+    background-color: var(--bg-color);
+    color: var(--text-color); 
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* big grid container (outer) */
+.grid-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.grid-container .row {
+    margin-bottom: 10px;
+}
+
+/* year labels */
+.year-label h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.year-label h3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* semster labels */
+.semester-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.semester-label .col-md-6 {
+    border-bottom: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding-bottom: 5px;
+}
+
+#year1, #year2, #year3, #year4 {
+    text-align: center;
+}
+
+/* course boxes */
+.course {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+
+    min-height: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.course h5 {
+    font-size: 13px;
+    margin:0px;
+    font-weight: bold;
+}
+
+.course p {
+    font-size: 11px;
+    margin: 1px 0 0 0;
+}
+
+.course:hover {
+    background-color: #f7f7f7;
+}
+
+/*  state of the course  */
+
+/* if available */
+.available {
+    background-color: var(--available-bg) !important;
+    color: var(--available-text);
+    border-color: var(--available-border);
+}
+
+/* if locked */
+.locked {
+    background-color: var(--locked-bg) !important;
+    color: var(--locked-text);
+    border-color: var(--locked-border);
+    cursor: not-allowed;
+}
+
+/* if in-progress */
+.in-progress {
+    background-color: var(--progress-bg) !important;
+    color: var(--progress-text);
+    border-color: var(--progress-border);
+}
+
+/* if completed */
+.completed {
+    background-color: var(--completed-bg) !important;
+    color: var(--completed-text);
+    border-color: var(--completed-border);
+}
+
+/* fixes for the spacing of the courses  */
+
+.col-md-6 {
+    padding: 5px;
+}
+
+.col-md-6:empty {
+    min-height: 85px;
+}
+
+.row {
+    margin-left: 20;
+    margin-right: 0;
+}
+
+/* the key at the bottom of the page (legend) */
+
+.legend-box {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+}
+
+.legend-box.available {
+    border-color: var(--available-border);
+    background-color: var(--available-bg);
+    color: var(--available-text);
+}
+
+.legend-box.locked {
+    border-color: var(--locked-border);
+    background-color: var(--locked-bg);
+    color: var(--locked-text);
+}
+
+.legend-box.in-progress {
+    border-color: var(--progress-border);
+    background-color: var(--progress-bg);
+    color: var(--progress-text);
+}
+
+.legend-box.completed {
+    border-color: var(--completed-border);
+    background-color: var(--completed-bg);
+    color: var(--completed-text);
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    border: 1px solid var(--sidebar-border);
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: -320px;
+    width: 270px;
+    height: calc(100% - 40px);
+    background: var(--sidebar-bg);
+    border-radius: 28px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
+    z-index: 1200;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.show {
+    left: 20px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.sidebar-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--sidebar-text);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--sidebar-text);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-item-custom {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 16px;
+    color: var(--sidebar-text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-item-custom:hover {
+    background: var(--sidebar-hover);
+}
+
+.nav-item-custom.active {
+    background: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+}
+
+/* keep space between icon and nav bar content */
+.nav-item-custom i {
+    margin-right: 15px !important; 
+    display: inline-block;
+    width: 20px; 
+    text-align: center;
+}

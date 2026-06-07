@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Portal</title>
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">CourseHub</span>
+            <button id="closeMenu" class="close-btn">✕</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="UsersServlet" class="nav-item-custom"><i class="bi bi-speedometer2"></i>Dashboard</a>
+            <a href="SidebarServlet?page=CoursesMain" class="nav-item-custom"><i class="bi bi-journal-bookmark-fill"></i>My classes</a>
+            <a href="ScheduleServlet" class="nav-item-custom"><i class="bi bi-clock"></i>Schedule</a>
+            <a href="SidebarServlet?page=flowchart" class="nav-item-custom"><i class="bi bi-diagram-2"></i>FlowChart</a>
+            <a href="#" class="nav-item-custom active"><i class="bi bi-chat-dots"></i>Messages</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div id="form-container">
+            <h2>Send Message</h2>
+            <form id="contact-form">
+                <div class="field">
+                    <label for="from_name">Sender Name and ID</label>
+                    <input type="text" name="from_name" id="from_name" placeholder="e.g. First name Last name (ID)" required>
+                </div>
+
+                <div class="field">
+                    <label for="reply_to">Recipient Email</label>
+                    <input type="email" name="reply_to" id="reply_to" placeholder="_____@aus.edu" required>
+                </div>
+
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="field">
+                    <label for="message">Message Body</label>
+                    <textarea name="message" id="message" rows="4" placeholder="Write your email here..." required></textarea>
+                </div>
+
+                <button type="submit" id="button">Send Now</button>
+            </form>
+        </div>
+
+        <div id="success-state" class="hidden">
+            <div class="checkmark">📬</div>
+            <h2>Email Sent!</h2>
+            <p>Your email was delivered successfully.</p>
+            <button class="secondary-btn" onclick="showForm()">Send Another</button>
+        </div>
+    </div>
+
+    <script src="messages.js"></script>
+</body>
+</html>

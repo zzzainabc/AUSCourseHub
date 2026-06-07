@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CS Flowchart Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="flowchartstyles.css">
+</head>
+
+<body>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">CourseHub</span>
+            <button id="closeMenu" class="close-btn">✕</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="UsersServlet" class="nav-item-custom"><i class="bi bi-speedometer2"></i> Dashboard</a>
+            <a href="SidebarServlet?page=CoursesMain" class="nav-item-custom"><i class="bi bi-journal-bookmark-fill"></i> My classes</a>
+            <a href="ScheduleServlet" class="nav-item-custom"><i class="bi bi-clock"></i> Schedule</a>
+            <a href="#" class="nav-item-custom active"><i class="bi bi-diagram-2"></i> FlowChart</a>
+            <a href="SidebarServlet?page=messages" class="nav-item-custom"><i class="bi bi-chat-dots"></i> Messages</a>
+        </nav>
+    </div>
+
+    <h1>CS Study Plan Flowchart</h1>
+
+    <div class="grid-container">
+
+        <div class="row year-label">
+            <div class="col-md-3" id="year1">
+                <h1>First Year</h1>
+                <h3>31 Credit Hours</h3>
+            </div>
+            <div class="col-md-3" id="year2">
+                <h1>Second Year</h1>
+                <h3>32 Credit Hours</h3>
+            </div>
+            <div class="col-md-3" id="year3">
+                <h1>Third Year</h1>
+                <h3>31 Credit Hours</h3>
+            </div>
+            <div class="col-md-3" id="year4">
+                <h1>Fourth Year</h1>
+                <h3>30 Credit Hours</h3>
+            </div>
+        </div>
+
+        <div class="row semester-label text-center">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">Sem 1</div>
+                    <div class="col-md-6">Sem 2</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">Sem 1</div>
+                    <div class="col-md-6">Sem 2</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">Sem 1</div>
+                    <div class="col-md-6">Sem 2</div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">Sem 1</div>
+                    <div class="col-md-6">Sem 2</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 1 -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="ngn110" data-save-id="ngn110">
+                        <h5>NGN 110</h5>
+                        <p>Introduction to Engineering & Computing</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="cmp120" data-save-id="cmp120" data-prereq="ngn110">
+                        <h5>CMP 120</h5>
+                        <p>Programming I</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="cmp220" data-save-id="cmp220" data-prereq="cmp120">
+                        <h5>CMP 220</h5>
+                        <p>Programming II</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="cmp257" data-save-id="cmp257" data-prereq="cmp220">
+                        <h5>CMP 257</h5>
+                        <p>Web Application Programming</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="cmp340" data-save-id="cmp340" data-prereq="ngn211 cmp305">
+                        <h5>CMP 340</h5>
+                        <p>Design & Analysis of Algorithms</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="cmp310" data-save-id="cmp310" data-prereq="coe251 cmp305">
+                        <h5>CMP 310</h5>
+                        <p>Operating Systems</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="cmp490" data-save-id="cmp490" data-prereq="eng204">
+                        <h5>CMP 490</h5>
+                        <p>Design Project I</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="cmp491" data-save-id="cmp491" data-prereq="cmp490">
+                        <h5>CMP 491</h5>
+                        <p>Design Project II</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="ngn112" data-save-id="ngn112">
+                        <h5>NGN 112</h5>
+                        <p>Introduction to AI & Data Science</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="gercore" data-save-id="gercore1">
+                        <h5>GER-Core</h5>
+                        <p>History & Culture of Arab World</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="coe221" data-save-id="coe221" data-prereq="cmp120">
+                        <h5>COE 221</h5>
+                        <p>Digital Systems</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="cmp305" data-save-id="cmp305" data-prereq="cmp220">
+                        <h5>CMP 305</h5>
+                        <p>Data Structures & Algorithms</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="coe251" data-save-id="coe251" data-prereq="cmp120 coe221">
+                        <h5>COE 251</h5>
+                        <p>Introduction to Computer Systems</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="coe371" data-save-id="coe371" data-prereq="mth104 coe221">
+                        <h5>COE 371</h5>
+                        <p>Computer Networks I</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="mje" data-save-id="mje1">
+                        <h5>MJE</h5>
+                        <p>Technical Elective</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="mje" data-save-id="mje2">
+                        <h5>MJE</h5>
+                        <p>Technical Elective</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="mth103" data-save-id="mth103">
+                        <h5>MTH 103</h5>
+                        <p>Calculus I</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="mth104" data-save-id="mth104" data-prereq="mth103">
+                        <h5>MTH 104</h5>
+                        <p>Calculus II</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="mth221" data-save-id="mth221" data-prereq="mth104">
+                        <h5>MTH 221</h5>
+                        <p>Linear Algebra</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="ngn211" data-save-id="ngn211" data-prereq="mth103">
+                        <h5>NGN 211</h5>
+                        <p>Introduction to Engineering Probability & Statistics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="cmp321" data-save-id="cmp321" data-prereq="cmp305 cmp257">
+                        <h5>CMP 321</h5>
+                        <p>Programming Languages</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="gercore" data-save-id="gercore2">
+                        <h5>GER-Core</h5>
+                        <p>Arts and Literature</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="mje" data-save-id="mje3">
+                        <h5>MJE</h5>
+                        <p>Technical Elective</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="mje" data-save-id="mje4">
+                        <h5>MJE</h5>
+                        <p>Technical Elective</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="gersci" data-save-id="gersci1">
+                        <h5>GER-SCI</h5>
+                        <p>Natural Sciences</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="gersci" data-save-id="gersci2">
+                        <h5>GER-SCI</h5>
+                        <p>Natural Sciences</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="mth213" data-save-id="mth213" data-prereq="mth103">
+                        <h5>MTH 213</h5>
+                        <p>Discrete Mathematics</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="ien301" data-save-id="ien301" data-prereq="eng204">
+                        <h5>IEN 301</h5>
+                        <p>Innovation & Entrepreneurship Mindset</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="gersci" data-save-id="gersci3">
+                        <h5>GER-SCI</h5>
+                        <p>Natural Sciences</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="cmp333" data-save-id="cmp333" data-prereq="cmp305">
+                        <h5>CMP 333</h5>
+                        <p>Artificial Intelligence</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="fre" data-save-id="fre1">
+                        <h5>FRE</h5>
+                        <p>Free Elective</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="gercore" data-save-id="gercore3">
+                        <h5>GER-Core</h5>
+                        <p>Culture in a Critical Perspectiver</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="wri101" data-save-id="wri101">
+                        <h5>WRI 101</h5>
+                        <p>Academic Writing I</p>
+                    </div>
+                    <div class="col-md-6 course locked" data-id="wri102" data-save-id="wri102" data-prereq="wri101">
+                        <h5>WRI 102</h5>
+                        <p>Academic Writing II</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="eng204" data-save-id="eng204" data-prereq="wri102">
+                        <h5>ENG 204</h5>
+                        <p>Advanced Academic Writing</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="gercore" data-save-id="gercore4">
+                        <h5>GER-Core</h5>
+                        <p>Human Interaction & Behavior</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6 course locked" data-id="mth343" data-save-id="mth343" data-prereq="mth221 cmp120">
+                        <h5>MTH 343</h5>
+                        <p>Numerical Analysis I</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course" data-id="fre" data-save-id="fre2">
+                        <h5>FRE</h5>
+                        <p>Free Elective</p>
+                    </div>
+                    <div class="col-md-6 course" data-id="gercore" data-save-id="gercore5">
+                        <h5>GER-Core</h5>
+                        <p>Selected Course</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 6 -->
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 course locked" data-id="coe420" data-save-id="coe420" data-prereq="cmp257 cmp305">
+                        <h5>COE 420</h5>
+                        <p>Software Engineering</p>
+                    </div>
+                    <div class="col-md-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-4">
+        <hr>
+
+        <div class="row align-items-center" id="themeselection">
+            <div class="col-md-6">
+                <h5>Legend:</h5>
+                <div class="legend-box available">Available</div>
+                <div class="legend-box locked">Unavailable</div>
+                <div class="legend-box in-progress">In Progress</div>
+                <div class="legend-box completed">Completed</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="flowchartscript.js"></script>
+</body>
+
+</html>

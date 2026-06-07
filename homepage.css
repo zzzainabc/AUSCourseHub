@@ -1,0 +1,483 @@
+:root {
+    --bg-color: #f5f7fb;
+    --text-color: #1f2937;
+    --muted-text: #6b7280;
+
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --soft-bg: #f8fafc;
+    --border-color: #edf2f7;
+
+    --nav-text: #2c3e50;
+    --nav-hover-bg: #f1f5f9;
+    --nav-active-bg: #fff0f0;
+    --nav-active-text: #750009;
+
+    --badge-bg: #ffffff;
+    --accent-color: #750009;
+    --accent-hover: #5e0007;
+    --danger-color: #d94b5c;
+
+    --chip-bg: rgba(255, 255, 255, 0.96);
+    --chip-text: #1f2937;
+    --calendar-pill-bg: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.text-muted {
+    color: var(--muted-text) !important;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background: var(--sidebar-bg);
+    border-radius: 28px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item-custom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    margin: 4px 0;
+    border-radius: 16px;
+    color: var(--nav-text);
+    font-weight: 500;
+    transition: all 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* keep space between icon and nav bar content */
+.nav-item-custom i {
+    margin-right: 15px !important; 
+    display: inline-block;
+    width: 20px; 
+    text-align: center;
+}
+
+.nav-item-custom.active {
+    background: var(--nav-active-bg);
+    color: var(--nav-active-text);
+}
+
+.nav-item-custom.active i,
+.nav-item-custom.active span {
+    color: var(--nav-active-text);
+    opacity: 1;
+}
+
+.nav-item-custom:hover:not(.active) {
+    background: var(--nav-hover-bg);
+}
+
+.badge-attend {
+    background: var(--badge-bg);
+    color: var(--text-color);
+    padding: 6px 16px;
+    border-radius: 40px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: 0.85rem;
+}
+
+/* Cards */
+.card-modern {
+    background: var(--card-bg);
+    border-radius: 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.1s ease;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 0.6rem 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0.25rem;
+}
+
+.event-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.progress-custom {
+    height: 8px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* Calendar mini */
+.calendar-mini {
+    background: var(--card-bg);
+    border-radius: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+}
+
+.cal-weekday {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted-text);
+    padding: 4px 0;
+}
+
+.cal-day {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 0;
+    border-radius: 30px;
+    background: var(--calendar-pill-bg);
+    color: var(--text-color);
+    transition: all 0.1s;
+    cursor: default;
+}
+
+.cal-day.event-day {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.cal-day.today {
+    background: #f7dede;
+    color: #8f2e3a;
+    font-weight: 700;
+}
+
+.link-plain {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.link-plain:hover {
+    color: var(--accent-hover);
+}
+
+/* Carousel */
+.carousel-inner img {
+    object-fit: cover;
+    border-radius: 20px;
+    max-height: 280px;
+    width: 100%;
+}
+
+.carousel-modern-wrapper {
+    padding: 0;
+}
+
+.card-modern .p-3.pt-0 {
+    padding-top: 0 !important;
+}
+
+.linked-teachers-row {
+    margin-bottom: 0;
+}
+
+/* Tables */
+.table th,
+.table td {
+    padding: 10px 8px;
+}
+
+/* Theme-driven accents */
+.logo-area i {
+    color: var(--accent-color) !important;
+}
+
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+a:not(.btn):not(.dropdown-item):not(.nav-link) {
+    color: var(--accent-color);
+}
+
+a:not(.btn):not(.dropdown-item):not(.nav-link):hover {
+    color: var(--accent-hover);
+}
+
+.text-primary {
+    color: var(--accent-color) !important;
+}
+
+.bi.bi-person-circle.text-primary,
+i.text-primary,
+.text-primary i {
+    color: var(--accent-color) !important;
+}
+
+.event-item i.bi,
+.todo-item i.bi:not(.bi-trash3),
+.card-header-custom i.bi:first-child {
+    color: var(--accent-color);
+}
+
+.d-flex.align-items-center.gap-2.bg-light i.bi-person-circle {
+    color: var(--accent-color) !important;
+}
+
+.progress-bar.bg-primary,
+.progress-bar.bg-info,
+.badge.bg-primary {
+    background-color: var(--accent-color) !important;
+}
+
+.bi-person-check-fill.text-primary,
+.bi-star-fill.text-info,
+.bi.bi-cpu.fs-3,
+.bi-journal-bookmark-fill.text-warning,
+.card-header-custom .bi.bi-calendar-event-fill.text-danger {
+    color: var(--accent-color) !important;
+}
+
+.small a,
+a.small {
+    color: var(--accent-color);
+}
+
+#coursePlanLink {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+#coursePlanLink:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.badge.bg-primary.bg-opacity-25,
+.badge.bg-warning.bg-opacity-25.text-dark,
+.badge.bg-info.bg-opacity-25.text-dark {
+    color: var(--accent-color) !important;
+}
+
+.badge.bg-light {
+    color: var(--text-color);
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.alert-light {
+    background-color: var(--soft-bg);
+    border-left: 3px solid var(--accent-color);
+}
+
+#addTodoBtn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.bi-trash3.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(117, 0, 9, 0.18);
+}
+
+.btn-link {
+    color: var(--accent-color);
+}
+
+.btn-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Pills / chips */
+.bg-light {
+    background-color: var(--chip-bg) !important;
+}
+
+.d-flex.align-items-center.gap-2.bg-light {
+    color: var(--chip-text) !important;
+    font-weight: 500;
+}
+
+/* Theme dropdown */
+.theme-section {
+    padding: 0 4px;
+}
+
+.theme-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted-text);
+}
+
+.theme-select {
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    box-shadow: none;
+}
+
+.theme-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.08);
+}
+
+.theme-select option {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        margin-bottom: 16px;
+    }
+
+    .card-header-custom {
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-time {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.circle-btn {
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;           
+  cursor: pointer;
+}
+
+.circle-btn i {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.circle-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.completed-task {
+    opacity: 0.55;
+}
+
+.completed-task .form-check-label {
+    text-decoration: line-through;
+}
+
+.upcoming-tasks-body {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.upcoming-tasks-body .event-item {
+  padding-right: 6px;
+}
